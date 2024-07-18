@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>Journals</title>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">E-Journal </h1>
+        <div class="row" id="journal-list">
+        </div>
+    </div>
+
+    <script>
+        const journals = [
+            {
+                title: "Fluoride dielectrics for 2D transistors",
+                cover: "j 1.webp",
+                link: "https://www.nature.com/articles/s41565-024-01710-5"
+            },
+            {
+                title: "Doping for ohmic contacts in 2D transistors",
+                cover: "j 2.webp", 
+                link: "https://www.nature.com/articles/s41928-024-01191-3"
+            },
+            {
+            title: "AI & Robotics briefing:How to beat'superhuman' AI",
+                cover: "j 3.webp", 
+                link:"https://www.nature.com/articles/d41586-024-02283-y"
+            }
+        ];
+
+        const journalList = document.getElementById('journal-list');
+
+        journals.forEach(journal => {
+            const journalEntry = `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="${journal.cover}" class="card-img-top" alt="${journal.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${journal.title}</h5>
+                            <a href="${journal.link}" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            journalList.innerHTML += journalEntry;
+        });
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

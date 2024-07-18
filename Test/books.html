@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>books</title>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">E-Books</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Department</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const books = [
+            {
+                title: "Higher Engineering Mathematics",
+                author: "B.s.Grewal",
+                image: "Book 1.jpg",
+                Department: "Mathematics",
+                link: "https://r.search.yahoo.com/_ylt=Awr1QMRZ4ZhmnqUAxi.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1721323993/RO=10/RU=https%3a%2f%2fdrive.google.com%2ffile%2fd%2f0B0vdR_jt9M--YkVMTjV0eVFMNWc%2fedit/RK=2/RS=8q1iGO3IaTxGRPeY3WmPmBIi2iQ-"
+            },
+            {
+                title: "Power Electronics",
+                author: "P.s.Bimbhra",
+                image: "Book 2.jpg",
+                Department: "Electronics",
+                link: "https://r.search.yahoo.com/_ylt=AwrPrwNJ4phmlDIA53q7HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1721324233/RO=10/RU=https%3a%2f%2farchive.org%2fdetails%2fpower-electronics-by-ps-bimbhra-pdfdrive/RK=2/RS=9HdLwzsW057lLeuZzKrBulv5AvM-"
+            },
+            {
+                title: "Theory and Performance of Electrical Machines",
+                author: "J.p.Gupta",
+                image: "Book 3.jpg",
+                Department: "Electrical",
+                link: "https://r.search.yahoo.com/_ylt=AwrKBxWc45hmoDIADpO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1721324573/RO=10/RU=https%3a%2f%2fwww.scribd.com%2fdocument%2f438826665%2ftheory-and-performance-of-electrical-machines-by-jb-gupta-pdf/RK=2/RS=eqkETVqgs4fqBkIjp5.8QslXaLA-"
+            },
+            {
+                title: "An Introduction to Database Systems",
+                author: "C.J.Date, A.Kannan, S.Swamynathan",
+                image: "Book 4.jpg",
+                Department: "Computer science",
+                link: "https://r.search.yahoo.com/_ylt=AwrKABwP5ZhmRzIAb6e7HAx.;_ylu=Y29sbwNzZzMEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1721324943/RO=10/RU=https%3a%2f%2fwww.scribd.com%2fdocument%2f344259446%2fAn-Introduction-to-Database-Systems-8th-Edition-C-J-Date-pdf/RK=2/RS=3VAoyU0UDe6cHUTktQgfhbL.HBQ-"
+            },
+            {
+                title: "Fluid Mechanics and Hydraulics Machines",
+                author: "R.k.Bansal",
+                image: "Book 5.jpg",
+                Department: "Mechnical",
+                link: "https://r.search.yahoo.com/_ylt=Awrx..cy5phmtecA3H67HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1721325235/RO=10/RU=https%3a%2f%2fdrive.google.com%2ffile%2fd%2f0B772yC24VcT6YVZGZ3JKQ3JkNlU%2fview/RK=2/RS=PHGjPtSDwBaJX6zQ_d5ob.3SvO4-"
+            }
+
+        ];
+
+        const bookList = document.getElementById('book-list');
+
+        books.forEach(book => {
+            const bookRow = `
+                <tr>
+                    <td><img src="${book.image}" alt="${book.title}" style="height: 100px;"></td>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.Department}</td>
+                    <td><a href="${book.link}" class="btn btn-primary">Link</a></td>
+                </tr>
+                `;
+                bookList.innerHTML += bookRow;
+        });
+    </script>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
